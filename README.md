@@ -13,7 +13,9 @@ Repository for the Cambridge HEX event.
 # Install instructions
 This code runs in a virtual environment (venv or conda) that is described by the `requirements.txt` file. See https://docs.python.org/3/library/venv.html for details. Below instructions are for using pip on a Linux/OS X system. Use the link for a Windows system with conda.
 
-1.) Create new (empty) Python 3 environment on your local system, e.g. `python3 -m venv /path/to/new/virtual/environment`
+<ol>
+  <li>Create new (empty) Python 3 environment on your local system, e.g. `python3 -m venv /path/to/new/virtual/environment`</li>
+</ol>
 2.) Activate your environment: `source </path/to/new/virtual/environment>/bin/activate`
 3.) Navigate to path where you want to clone this repository
 4.) git clone <http link> to clone this repository to your system
