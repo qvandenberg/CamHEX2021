@@ -2,8 +2,8 @@
 Repository for the Cambridge HEX event.
 
 # Group members
-Raquel Manzano
-Quincy van den Berg
+Raquel Manzano\n
+Quincy van den Berg\n
 torus403
 kitfunso
 gg1998
