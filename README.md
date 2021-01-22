@@ -2,11 +2,13 @@
 Repository for the Cambridge HEX event.
 
 # Group members
-Raquel Manzano\n
-Quincy van den Berg\n
-torus403
-kitfunso
-gg1998
+<ul>
+  <li>Raquel Manzano</li>
+  <li>Quincy van den Berg</li>
+  <li>torus403</li>
+  <li>kitfunso</li>
+  <li>gg1998</li>
+</ul>
 
 # Install instructions
 This code runs in a virtual environment (venv or conda) that is described by the `requirements.txt` file. See https://docs.python.org/3/library/venv.html for details. Below instructions are for using pip on a Linux/OS X system. Use the link for a Windows system with conda.
