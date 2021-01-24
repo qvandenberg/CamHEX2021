@@ -1,12 +1,21 @@
-import datetime 
-from datetime import datetime as dt 
-import numpy as np 
+import datetime
+from datetime import datetime as dt
+import numpy as np
 from itertools import filterfalse
 
 MAX_TICK_LIFETIME = 10 # seconds
+'''
+The TradeHistory acts as a source of truth as to what the price of each instrument is.
+Price books have shown to be unreliable, so the recent trade history is what we use to
+judge whether an ask or a bid is underpriced or overpriced. With time, previous trades
+gradually lose their value so we compute an average volume-weighted price over the trades in the last MAX_TICK_LIFETIME
+seconds.
 
+Optionally, it can be a weighted average with a decay function to give the most recent trade ticks
+a higher importance.
+'''
 class TradeHistory:
-    
+
     def __init__(self, exchange, instr_list):
         self.exchange = exchange
         self.last_trade_nr = None
@@ -29,7 +38,7 @@ class TradeHistory:
                 self.instruments[t.instrument_id]['ticks'].append(tick)
             self.purge_expired_trades()
             self.compute_real_price()
-        
+
     def purge_expired_trades(self):
         # Remove all trades older than MAX_TICK_LIFETIME
         time_now = dt.now()
@@ -43,7 +52,7 @@ class TradeHistory:
             return True
         else:
             return False
-    
+
     def compute_real_price(self): # volume-weighted, equal weights w.r.t. timestamp
         for instr, param in self.instruments.items():
             if len(param['ticks']) == 0:
@@ -55,8 +64,7 @@ class TradeHistory:
                     volume_price_sum += tick['price'] * tick['volume']
                     trade_volume += tick['volume']
                 self.instruments[instr]['real_price'] = volume_price_sum/trade_volume
-    
+
     def get_real_price(self, instr):
         #print("Get real price: ", self.instruments[instr]['real_price'])
         return self.instruments[instr]['real_price']
-

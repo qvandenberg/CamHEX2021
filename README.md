@@ -1,7 +1,10 @@
 # CamHEX2021
-Repository for the Cambridge HEX event for one of the finance/trading challenges.
+Repository for the Cambridge HEX 2021 event for the Optiver trading challenge.
 
-## Install instructions
+## Run instructions
+`python src/AlgoPassive.py`
+
+## Collaboration instructions
 This code runs in a virtual environment (venv or conda) that is described by the `requirements.txt` file. See https://docs.python.org/3/library/venv.html for details. Below instructions are for using pip on a Linux/OS X system. Use the link for a Windows system with conda.
 
 <ol>
