@@ -6,6 +6,7 @@ Script: Scripts generated for Hex Cambridge Hackathon.
 Using a csv file with a trading history it will calculate simple and exponential moving averages
 Input needs Timestamp and price column minimum.
 TODO: set an appropiate time for rolling functions
+Inspired from: https://www.learndatasci.com/tutorials/python-finance-part-3-moving-average-trading-strategy/
 """
 import pandas as pd
 import matplotlib.pyplot as plt
